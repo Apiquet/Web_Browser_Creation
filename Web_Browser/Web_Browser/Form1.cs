@@ -55,6 +55,7 @@ namespace Web_Browser
             }
         }
 
+        //functions to add and remove tabs
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ((WebBrowser) tabControl1.SelectedTab.Controls[0]).GoBack();
@@ -67,9 +68,7 @@ namespace Web_Browser
         private void addPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _web = new System.Windows.Forms.WebBrowser();
-            _web.ScriptErrorsSuppressed = true;
             _web.Dock = DockStyle.Fill;
-            _web.Visible = true;
             _web.DocumentCompleted += web_DocumentCompleted;
             tabControl1.TabPages.Add("New Tab");
             tabControl1.SelectTab(_i);
