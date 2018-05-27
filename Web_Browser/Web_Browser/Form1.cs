@@ -16,8 +16,10 @@ namespace Web_Browser
         {
             InitializeComponent();
         }
-        WebBrowser web = new WebBrowser();
-        private int i = 0;
+        //web browser declaration
+        private WebBrowser _web = new WebBrowser();
+        //tab index
+        private int _i = 0;
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -26,15 +28,15 @@ namespace Web_Browser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            web = new WebBrowser();
-            web.ScriptErrorsSuppressed = true;
-            web.Dock = DockStyle.Fill;
-            web.Visible = true;
-            web.DocumentCompleted += web_DocumentCompleted;
+            _web = new WebBrowser();
+            _web.ScriptErrorsSuppressed = true;
+            _web.Dock = DockStyle.Fill;
+            _web.Visible = true;
+            _web.DocumentCompleted += web_DocumentCompleted;
             tabControl1.TabPages.Add("New Tab");
-            tabControl1.SelectTab(i);
-            tabControl1.SelectedTab.Controls.Add(web);
-            i += 1;
+            tabControl1.SelectTab(_i);
+            tabControl1.SelectedTab.Controls.Add(_web);
+            _i += 1;
 
         }
 
@@ -63,15 +65,15 @@ namespace Web_Browser
 
         private void addPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            web = new System.Windows.Forms.WebBrowser();
-            web.ScriptErrorsSuppressed = true;
-            web.Dock = DockStyle.Fill;
-            web.Visible = true;
-            web.DocumentCompleted += web_DocumentCompleted;
+            _web = new System.Windows.Forms.WebBrowser();
+            _web.ScriptErrorsSuppressed = true;
+            _web.Dock = DockStyle.Fill;
+            _web.Visible = true;
+            _web.DocumentCompleted += web_DocumentCompleted;
             tabControl1.TabPages.Add("New Tab");
-            tabControl1.SelectTab(i);
-            tabControl1.SelectedTab.Controls.Add(web);
-            i += 1;
+            tabControl1.SelectTab(_i);
+            tabControl1.SelectedTab.Controls.Add(_web);
+            _i += 1;
         }
 
         private void removePageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,7 +82,7 @@ namespace Web_Browser
             {
                 tabControl1.TabPages.RemoveAt(tabControl1.SelectedIndex);
                 tabControl1.SelectTab(tabControl1.TabPages.Count - 1);
-                i -= 1;
+                _i -= 1;
             }
         }
     }
