@@ -41,7 +41,7 @@ namespace Web_Browser
 
         void web_DocumentCompleted(object sender, EventArgs e)
         {
-            
+            tabControl1.SelectedTab.Text = ((WebBrowser) tabControl1.SelectedTab.Controls[0]).web.DocumentTitle;
         }
 
         private void goToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +81,7 @@ namespace Web_Browser
             {
                 tabControl1.TabPages.RemoveAt(tabControl1.SelectedIndex);
                 tabControl1.SelectTab(tabControl1.TabPages.Count - 1);
+                i -= 1;
             }
         }
     }
