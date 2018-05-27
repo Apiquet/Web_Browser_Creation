@@ -43,5 +43,14 @@ namespace Web_Browser
         {
             
         }
+
+        private void goToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((WebBrowser)tabControl1.SelectedTab.Controls[0]).web.Navigate(toolStripComboBox1.Text);
+            if (!toolStripComboBox1.Items.Contains(toolStripComboBox1.Text))
+            {
+                toolStripComboBox1.Items.Add(toolStripMenuItem1.Text);
+            }
+        }
     }
 }
