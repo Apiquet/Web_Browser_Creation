@@ -1,6 +1,6 @@
 ﻿namespace Web_Browser
 {
-    partial class WebBrowser
+    partial class WebBrowserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -112,7 +112,7 @@
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // WebBrowser
+            // WebBrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +120,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "WebBrowser";
+            this.Name = "WebBrowserForm";
             this.Text = "WebBrowser";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

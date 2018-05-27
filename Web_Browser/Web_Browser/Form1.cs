@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 namespace Web_Browser
 {
-    public partial class WebBrowser : Form
+    public partial class WebBrowserForm : Form
     {
-        public WebBrowser()
+        public WebBrowserForm()
         {
             InitializeComponent();
         }
-
-        System.Windows.Forms.WebBrowser web = new System.Windows.Forms.WebBrowser();
+        WebBrowser web = new WebBrowser();
         private int i = 0;
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -27,7 +26,7 @@ namespace Web_Browser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            web = new System.Windows.Forms.WebBrowser();
+            web = new WebBrowser();
             web.ScriptErrorsSuppressed = true;
             web.Dock = DockStyle.Fill;
             web.Visible = true;
@@ -41,12 +40,12 @@ namespace Web_Browser
 
         void web_DocumentCompleted(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab.Text = ((WebBrowser) tabControl1.SelectedTab.Controls[0]).web.DocumentTitle;
+            tabControl1.SelectedTab.Text = ((WebBrowser) tabControl1.SelectedTab.Controls[0]).DocumentTitle;
         }
 
         private void goToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((WebBrowser) tabControl1.SelectedTab.Controls[0]).web.Navigate(toolStripComboBox1.Text);
+            ((WebBrowser) tabControl1.SelectedTab.Controls[0]).Navigate(toolStripComboBox1.Text);
             if (!toolStripComboBox1.Items.Contains(toolStripComboBox1.Text))
             {
                 toolStripComboBox1.Items.Add(toolStripMenuItem1.Text);
@@ -55,11 +54,11 @@ namespace Web_Browser
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ((WebBrowser) tabControl1.SelectedTab.Controls[0]).web.GoBack();
+            ((WebBrowser) tabControl1.SelectedTab.Controls[0]).GoBack();
         }
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            ((WebBrowser) tabControl1.SelectedTab.Controls[0]).web.GoForward();
+            ((WebBrowser) tabControl1.SelectedTab.Controls[0]).GoForward();
         }
 
         private void addPageToolStripMenuItem_Click(object sender, EventArgs e)
