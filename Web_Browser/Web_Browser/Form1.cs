@@ -26,18 +26,19 @@ namespace Web_Browser
 
         }
 
+        //set up program when the from load
         private void Form1_Load(object sender, EventArgs e)
         {
             _web = new WebBrowser();
-            _web.ScriptErrorsSuppressed = true;
+            //The tab window needs to fill the form
             _web.Dock = DockStyle.Fill;
-            _web.Visible = true;
             _web.DocumentCompleted += web_DocumentCompleted;
+            //Add a tab when the program is started
             tabControl1.TabPages.Add("New Tab");
+            //select the 1st tab 
             tabControl1.SelectTab(_i);
             tabControl1.SelectedTab.Controls.Add(_web);
             _i += 1;
-
         }
 
         void web_DocumentCompleted(object sender, EventArgs e)
