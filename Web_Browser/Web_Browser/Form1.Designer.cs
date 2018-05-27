@@ -93,12 +93,14 @@
             this.addPageToolStripMenuItem.Name = "addPageToolStripMenuItem";
             this.addPageToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
             this.addPageToolStripMenuItem.Text = "Add Page";
+            this.addPageToolStripMenuItem.Click += new System.EventHandler(this.addPageToolStripMenuItem_Click);
             // 
             // removePageToolStripMenuItem
             // 
             this.removePageToolStripMenuItem.Name = "removePageToolStripMenuItem";
             this.removePageToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
             this.removePageToolStripMenuItem.Text = "Remove Page";
+            this.removePageToolStripMenuItem.Click += new System.EventHandler(this.removePageToolStripMenuItem_Click);
             // 
             // tabControl1
             // 

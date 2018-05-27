@@ -61,5 +61,27 @@ namespace Web_Browser
         {
             ((WebBrowser) tabControl1.SelectedTab.Controls[0]).web.GoForward();
         }
+
+        private void addPageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            web = new System.Windows.Forms.WebBrowser();
+            web.ScriptErrorsSuppressed = true;
+            web.Dock = DockStyle.Fill;
+            web.Visible = true;
+            web.DocumentCompleted += web_DocumentCompleted;
+            tabControl1.TabPages.Add("New Tab");
+            tabControl1.SelectTab(i);
+            tabControl1.SelectedTab.Controls.Add(web);
+            i += 1;
+        }
+
+        private void removePageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages.Count > 1)
+            {
+                tabControl1.TabPages.RemoveAt(tabControl1.SelectedIndex);
+                tabControl1.SelectTab(tabControl1.TabPages.Count - 1);
+            }
+        }
     }
 }
